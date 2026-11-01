@@ -1,0 +1,12 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+soong_namespace {
+    imports: [
+        "device/samsung/universal8895-common",
+        "hardware/samsung",
+        "vendor/samsung/greatlte",
+    ],
+}

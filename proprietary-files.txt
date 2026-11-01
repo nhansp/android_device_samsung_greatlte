@@ -1,0 +1,23 @@
+# All blobs are from N950NKSU5DZE2 (SM-N950N, Android 9) unless pinned
+
+# Camera - firmware (FIMC-IS, companion, OIS), loaded by the kernel
+vendor/firmware/companion_2l2_master_setfile.bin
+vendor/firmware/companion_2l2_mode_setfile.bin
+vendor/firmware/companion_fw_2l2_3h1.bin
+vendor/firmware/companion_fw_2l2_imx320.bin
+vendor/firmware/companion_fw_imx333_3h1.bin
+vendor/firmware/companion_fw_imx333_imx320.bin
+vendor/firmware/companion_imx333_master_setfile.bin
+vendor/firmware/companion_imx333_mode_setfile.bin
+vendor/firmware/fimc_is_lib.bin
+vendor/firmware/fimc_is_rta_2l2_3h1.bin
+vendor/firmware/fimc_is_rta_2l2_imx320.bin
+vendor/firmware/fimc_is_rta_imx333_3h1.bin
+vendor/firmware/fimc_is_rta_imx333_imx320.bin
+vendor/firmware/ois_fw_dom.bin
+vendor/firmware/ois_fw_sec.bin
+vendor/firmware/setfile_2l2.bin
+vendor/firmware/setfile_3h1.bin
+vendor/firmware/setfile_3m3.bin
+vendor/firmware/setfile_imx320.bin
+vendor/firmware/setfile_imx333.bin
