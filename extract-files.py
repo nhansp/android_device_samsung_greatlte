@@ -4,6 +4,15 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+from extract_utils.fixups_blob import (
+    blob_fixup,
+    blob_fixups_user_type,
+)
+from extract_utils.fixups_lib import (
+    lib_fixup_remove,
+    lib_fixups,
+    lib_fixups_user_type,
+)
 from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
@@ -15,9 +24,35 @@ namespace_imports = [
     'vendor/samsung/universal8895-common',
 ]
 
+lib_fixups: lib_fixups_user_type = {
+    **lib_fixups,
+    'libstdc++': lib_fixup_remove,
+}
+
+blob_fixups: blob_fixups_user_type = {
+    (
+        'vendor/lib/hw/camera.universal8895.so',
+        'vendor/lib/libexynoscamera3.so',
+    ): blob_fixup()
+        .replace_needed('libcamera_client.so', 'libcamera_compat.so')
+        .replace_needed('libgui.so', 'libgui_vendor.so'),
+    'vendor/lib/libexynoscamera.so': blob_fixup()
+        .replace_needed('libcamera_client.so', 'libcamera_compat.so')
+        .replace_needed('libgui.so', 'libgui_vendor.so')
+        .add_needed('libexynoscamera_shim.so')
+        .remove_needed('libsec-ril.so')
+        .remove_needed('libsecril-client.so'),
+    'vendor/lib/libsensorlistener.so': blob_fixup()
+        .replace_needed('libandroid.so', 'libsensorndkbridge.so'),
+    'vendor/lib/libsnap_compute.so': blob_fixup()
+        .replace_needed('libOpenCL.so', 'libGLES_mali.so'),
+}  # fmt: skip
+
 module = ExtractUtilsModule(
     'greatlte',
     'samsung',
+    blob_fixups=blob_fixups,
+    lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
 )
 
