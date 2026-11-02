@@ -35,7 +35,6 @@ vendor/lib/libsnap_vndk.so
 vendor/lib/libsomp.camera.samsung.so
 vendor/lib/libvxu.so
 vendor/lib/libxcv.camera.samsung.so
-vendor/lib/libcsc.so
 
 # Camera - firmware (FIMC-IS, companion, OIS), loaded by the kernel
 vendor/firmware/companion_2l2_master_setfile.bin
