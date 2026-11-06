@@ -28,6 +28,11 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    (
+        'vendor/lib/libOpenCv.camera.samsung.so',
+        'vendor/lib/libxcv.camera.samsung.so',
+    ): blob_fixup()
+        .add_needed('libcompiler_rt.so'),
     'vendor/lib/libhifistill.so': blob_fixup()
         .add_needed('libprocessgroup.so'),
     'vendor/lib/libhifistill_tuning.so': blob_fixup()
