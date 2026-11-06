@@ -3,13 +3,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-include device/samsung/universal8895-common/BoardConfigCommon.mk
-
-DEVICE_PATH := device/samsung/greatlte
-
 # Boot image: the stock DTBH entry covers board revisions 6 to 255
 BOARD_DTBH_HW_REV := 6
 BOARD_DTBH_HW_REV_END := 255
+
+include device/samsung/universal8895-common/BoardConfigCommon.mk
+
+DEVICE_PATH := device/samsung/greatlte
 
 # Display
 TARGET_SCREEN_DENSITY := 420
