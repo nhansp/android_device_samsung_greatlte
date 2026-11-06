@@ -28,6 +28,8 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/lib/libhifistill.so': blob_fixup()
+        .add_needed('libprocessgroup.so'),
     'vendor/lib/libhifistill_tuning.so': blob_fixup()
         .fix_soname(),
     'vendor/lib/libsmartfocusengine.so': blob_fixup()
