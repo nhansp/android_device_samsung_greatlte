@@ -9,7 +9,6 @@ from extract_utils.fixups_blob import (
     blob_fixups_user_type,
 )
 from extract_utils.fixups_lib import (
-    lib_fixup_remove,
     lib_fixups,
     lib_fixups_user_type,
 )
@@ -26,10 +25,13 @@ namespace_imports = [
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
-    'libstdc++': lib_fixup_remove,
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/lib/libhifistill_tuning.so': blob_fixup()
+        .fix_soname(),
+    'vendor/lib/libsmartfocusengine.so': blob_fixup()
+        .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     (
         'vendor/lib/hw/camera.universal8895.so',
         'vendor/lib/libexynoscamera3.so',
