@@ -34,7 +34,8 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .add_needed('libcompiler_rt.so'),
     'vendor/lib/libhifistill.so': blob_fixup()
-        .add_needed('libprocessgroup.so'),
+        .add_needed('libprocessgroup.so')
+        .add_needed('libshim_cxa_demangle.so'),
     'vendor/lib/libhifistill_tuning.so': blob_fixup()
         .fix_soname(),
     'vendor/lib/libsmartfocusengine.so': blob_fixup()
