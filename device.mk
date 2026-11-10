@@ -7,6 +7,13 @@
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Camera
+$(call soong_config_set,samsungCameraVars,extra_ids,20)
+
+# Overlays
+PRODUCT_PACKAGES += \
+    FrameworkResOverlayGreatlte
+
 # Common tree
 $(call inherit-product, device/samsung/universal8895-common/common.mk)
 
