@@ -47,6 +47,10 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('libcamera_client.so', 'libcamera_compat.so')
         .replace_needed('libgui.so', 'libgui_vendor.so'),
+    'vendor/lib/libexynoscamera3.so': blob_fixup()
+        .binary_regex_replace(b'_ZN7android5FenceC1Ei', b'_ZN7libui285FenceC1Ei')
+        .binary_regex_replace(b'_ZN7android5Fence4waitEi', b'_ZN7libui285Fence4waitEi')
+        .add_needed('libshim_fence.so'),
     'vendor/lib/libexynoscamera.so': blob_fixup()
         .replace_needed('libcamera_client.so', 'libcamera_compat.so')
         .replace_needed('libgui.so', 'libgui_vendor.so')
