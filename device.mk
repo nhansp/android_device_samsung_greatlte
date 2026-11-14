@@ -8,7 +8,11 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Camera
-$(call soong_config_set,samsungCameraVars,extra_ids,20)
+# Camera 50 is the telephoto camera (stock cameradata/camera-feature.xml BACK_TELE_CAMERA_ID)
+$(call soong_config_set,samsungCameraVars,extra_ids,50)
+
+PRODUCT_PACKAGES += \
+    ApertureOverlayGreatlte
 
 # Overlays
 PRODUCT_PACKAGES += \
