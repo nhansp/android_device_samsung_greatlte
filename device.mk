@@ -18,6 +18,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FrameworkResOverlayGreatlte
 
+# Face unlock: the iris scanner, as stock greatlte ships it
+UNIVERSAL8895_FACE_UNLOCK := iris
+
 # Common tree
 $(call inherit-product, device/samsung/universal8895-common/common.mk)
 
