@@ -15,7 +15,8 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    FrameworkResOverlayGreatlte
+    FrameworkResOverlayGreatlte \
+    SettingsOverlayGreatlte
 
 # Face unlock
 UNIVERSAL8895_USE_FACE_IMPL := true
