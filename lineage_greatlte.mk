@@ -13,6 +13,11 @@ $(call inherit-product, device/samsung/greatlte/device.mk)
 TARGET_SCREEN_HEIGHT := 2960
 TARGET_SCREEN_WIDTH := 1440
 
+# GApps
+TARGET_USES_MINI_GAPPS := true
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 PRODUCT_NAME := lineage_greatlte

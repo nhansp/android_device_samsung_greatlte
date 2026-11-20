@@ -1,0 +1,15 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// GMS apps dropped so mini GApps fits in the super partition
+cc_library_shared {
+    name: "RemovePackages",
+    overrides: [
+        "KidsSupervisionStub",
+        "MoseyApp",
+        "talkback",
+    ],
+    compile_multilib: "64",
+}
