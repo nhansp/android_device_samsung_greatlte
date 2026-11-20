@@ -18,8 +18,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FrameworkResOverlayGreatlte
 
-# Face unlock: the iris scanner, as stock greatlte ships it
-UNIVERSAL8895_FACE_UNLOCK := iris
+# Face unlock: our face HAL on the front camera, instead of the ROM's
+UNIVERSAL8895_USE_FACE_IMPL := true
+UNIVERSAL8895_FACE_UNLOCK := face
 
 # Common tree
 $(call inherit-product, device/samsung/universal8895-common/common.mk)
