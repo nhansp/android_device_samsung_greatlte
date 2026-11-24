@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Boot image: the stock DTBH entry covers board revisions 6 to 255
+# Boot image
 BOARD_DTBH_HW_REV := 6
 BOARD_DTBH_HW_REV_END := 255
 

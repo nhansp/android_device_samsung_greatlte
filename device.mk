@@ -8,7 +8,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Camera
-# Camera 50 is the telephoto camera (stock cameradata/camera-feature.xml BACK_TELE_CAMERA_ID)
 $(call soong_config_set,samsungCameraVars,extra_ids,50)
 
 PRODUCT_PACKAGES += \
@@ -18,7 +17,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FrameworkResOverlayGreatlte
 
-# Face unlock: our face HAL on the front camera, instead of the ROM's
+# Face unlock
 UNIVERSAL8895_USE_FACE_IMPL := true
 UNIVERSAL8895_FACE_UNLOCK := face
 
