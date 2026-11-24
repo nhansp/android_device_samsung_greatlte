@@ -52,14 +52,11 @@ blob_fixups: blob_fixups_user_type = {
         .binary_regex_replace(b'_ZN7android5FenceC1Ei', b'_ZN7libui285FenceC1Ei')
         .binary_regex_replace(b'_ZN7android5Fence4waitEi', b'_ZN7libui285Fence4waitEi')
         .add_needed('libshim_fence.so')
-        # IMX333/2L2 preview sizes: 27 instead of 26 (sensorInfo+0x1330); r12 (26) also
-        # sets +0x1bc, so the count goes through r4, which is reloaded right after
+        # IMX333/2L2 preview size count 26 -> 27
         .sig_replace(
             '41 f2 30 37 40 f8 07 c0 41 f2 38 37 c4 51 ',
             '00f59857bc631b243c6300bf00bf')
-        # the 27-entry list, 3840x2160 after 4032x2268, over the hidden preview/picture
-        # lists the HAL3 code never reads (configureStreams checks video sizes against
-        # the preview list, so 4K was rejected)
+        # 27-entry size list with 3840x2160 added; configureStreams validates video sizes against it
         .sig_replace(
             '00 0f 00 00 70 08 00 00 00 00 00 00 c0 0c 00 00 2c 07 00 00 00 00 00 00 00 0a 00 00 a0 05 00 00 '
             '00 00 00 00 b0 08 00 00 38 04 00 00 08 00 00 00 40 06 00 00 b0 04 00 00 01 00 00 00 00 05 00 00 '
@@ -83,12 +80,11 @@ blob_fixups: blob_fixups_user_type = {
             '03 00 00 00 60 01 00 00 20 01 00 00 06 00 00 00 40 01 00 00 f0 00 00 00 01 00 00 00 00 01 00 00 '
             '90 00 00 00 00 00 00 00 b0 00 00 00 90 00 00 00 06 00 00 00 00 0f 00 00 70 08 00 00 00 00 00 00 ',
             'c00f0000d00b000001000000c00f0000dc08000000000000000f00007008000000000000d00b0000d00b000002000000900f0000ac0b000001000000c00c00009009000001000000c00c00002c07000000000000a00b0000a00b000002000000400b00007008000001000000000a0000a005000000000000700800007008000002000000000800008004000000000000800700003804000000000000a0050000380400000100000040040000400400000200000000050000d00200000000000020040000c002000003000000000400000003000001000000c0030000d00200000100000020030000c201000000000000d0020000d002000002000000d0020000e00100000300000080020000e00100000100000060010000200100000600000040010000f000000001000000000100009000000000000000b00000009000000006')
-        # sensorInfo+0x1384 -> the new list
+        # point sensorInfo at the new list
         .sig_replace(
             '6c ce 09 00 34 ce 09 00 78 d0 09 00 ',
             '6cce09008cd0')
-        # 16:9 row of the preview size table (+0x1428): the sensor's 4032x2268 mode,
-        # which also runs at 60 fps, instead of the full 4032x3024
+        # 16:9 preview row uses the 4032x2268 mode (60 fps) instead of 4032x3024
         .sig_replace(
             '00 00 00 00 c0 0f 00 00 d0 0b 00 00 c0 0f 00 00 d0 0b 00 00 c0 0f 00 00 d0 0b 00 00 c0 0f 00 00 '
             'd0 0b 00 00 c0 0f 00 00 d0 0b 00 00 01 00 00 00 c0 0f 00 00 d0 0b 00 00 c0 0f 00 00 d0 0b 00 00 '

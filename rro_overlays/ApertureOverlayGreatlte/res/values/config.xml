@@ -4,12 +4,10 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <!-- The telephoto camera is camera 50 (stock cameradata/camera-feature.xml BACK_TELE_CAMERA_ID). -->
+    <!-- Telephoto is camera 50 -->
     <bool name="config_enableAuxCameras">true</bool>
 
-    <!-- Stock records 1080p at 60 fps on the back camera
-         (camera-feature.xml BACK_CAMCORDER_RESOLUTION_FEATURE_MAP_1920X1080_60FPS); 720p takes
-         the same 4032x2268 60 fps sensor mode. -->
+    <!-- 1080p and 720p 60 fps share the 4032x2268 sensor mode -->
     <string-array name="config_additionalVideoConfigurations">
         <item>0</item> <item>fhd</item> <item>60</item>
         <item>0</item> <item>hd</item> <item>60</item>
