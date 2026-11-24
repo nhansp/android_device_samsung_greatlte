@@ -13,9 +13,9 @@ $(call inherit-product, device/samsung/greatlte/device.mk)
 TARGET_SCREEN_HEIGHT := 2960
 TARGET_SCREEN_WIDTH := 1440
 
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/custom/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_greatlte
+PRODUCT_NAME := custom_greatlte
 PRODUCT_DEVICE := greatlte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-N950N

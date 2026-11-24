@@ -1,0 +1,8 @@
+[
+    {
+        "repository": "nhansp/android_device_samsung_universal8895-common",
+        "target_path": "device/samsung/universal8895-common",
+        "remote": "LineageOS",
+        "branch": "17"
+    }
+]
