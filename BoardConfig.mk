@@ -15,8 +15,9 @@ DEVICE_PATH := device/samsung/greatlte
 TARGET_SCREEN_DENSITY := 420
 
 # Kernel
-TARGET_KERNEL_DTB := exynos/exynos8895-greatlte.dtb
-TARGET_DTB_LIST_WILDCARD := exynos/exynos8895-greatlte
+TARGET_KERNEL_CONFIG += vendor/greatlte.config
+TARGET_KERNEL_DTB := vendor/samsung/exynos8895-greatlte.dtb
+TARGET_DTB_LIST_WILDCARD := vendor/samsung/exynos8895-greatlte
 
 # Proprietary files
 include vendor/samsung/greatlte/BoardConfigVendor.mk
